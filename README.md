@@ -1,5 +1,36 @@
 # 🏗️ AI-Assisted UHPC Mix Design System
 
+> AI-powered decision support system for Ultra High Performance Concrete (UHPC) mix design using Machine Learning and Particle Swarm Optimization.
+
+---
+
+## 🌟 Project Overview
+
+This project combines Artificial Intelligence and Civil Engineering to automate the design of Ultra High Performance Concrete (UHPC) mixes.
+
+Instead of relying solely on traditional trial-and-error methods, the system predicts compressive strength using Machine Learning and generates optimized mix designs using Particle Swarm Optimization (PSO).
+
+The application also evaluates:
+
+- 💪 Predicted Compressive Strength
+- ⚙️ Engineering Feasibility
+- 💰 Estimated Cost
+- 🌱 CO₂ Emissions
+- 🏆 AI-Based Mix Recommendations
+
+---
+
+## 🚀 Features
+
+- 🧠 XGBoost Strength Prediction
+- ⚙️ Particle Swarm Optimization (PSO)
+- 🏗 Engineering Validation
+- 🌱 Sustainability Assessment
+- 💰 Cost Estimation
+- 📊 Interactive Streamlit Dashboard
+- 📈 Engineering Visualizations
+- 🏆 AI Recommendation Engine
+
 ![Python](https://img.shields.io/badge/Python-3.13-blue?logo=python)
 ![Streamlit](https://img.shields.io/badge/Streamlit-App-red?logo=streamlit)
 ![XGBoost](https://img.shields.io/badge/XGBoost-ML-green)
@@ -50,6 +81,63 @@ to generate practical, economical, and sustainable UHPC mix designs.
 - 📥 Export optimized mix designs (CSV)
 
 ---
+---
+
+## 📸 Application Preview
+
+### 🏠 Home
+
+![Home](screenshots/home.png.jpeg)
+
+---
+
+### 🚀 AI Mix Designer
+
+![Mix Designer](screenshots/AI_Mix_Designer.png.jpeg)
+
+---
+
+### 📊 Engineering Results
+
+![Results](screenshots/Engineering_Results.png.jpeg)
+
+---
+
+### 📈 Strength Prediction
+
+![Strength](screenshots/strength_predictor.png.jpeg)
+
+---
+
+### ℹ️ About
+
+![About](screenshots/About.png.jpeg)
+
+---
+
+## 🧠 AI Workflow
+
+```text
+User Inputs
+      │
+      ▼
+XGBoost Strength Prediction
+      │
+      ▼
+Particle Swarm Optimization
+      │
+      ▼
+Engineering Validation
+      │
+      ▼
+Cost & CO₂ Estimation
+      │
+      ▼
+AI Recommendation Engine
+      │
+      ▼
+Final UHPC Mix Design
+```
 
 # 🛠️ Technologies Used
 
@@ -108,25 +196,25 @@ streamlit run app.py
 
 ## 🏠 Home
 
-![Home](screenshots/home.png)
+![Home](screenshots/home.png.jpeg)
 
 ---
 
 ## 📈 Strength Predictor
 
-![Strength Predictor](screenshots/strength_predictor.png)
+![Strength Predictor](screenshots/strength_predictor.png.jpeg)
 
 ---
 
 ## 🚀 AI Mix Designer
 
-![AI Mix Designer](screenshots/ai_mix_designer.png)
+![AI Mix Designer](screenshots/AI_Mix_Designer.png.jpeg)
 
 ---
 
 ## 📊 Engineering Results
 
-![Engineering Results](screenshots/engineering_results.png)
+![Engineering Results](screenshots/Engineering_Results.png.jpeg)
 
 ---
 
