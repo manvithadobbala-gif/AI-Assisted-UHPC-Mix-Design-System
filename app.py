@@ -81,29 +81,25 @@ st.sidebar.write("🌱 Sustainability")
 if page == "🏠 Home":
 
     st.title("🏗️ AI-Assisted UHPC Mix Design System")
-    st.success(
-    "🚀 AI-Assisted Decision Support System for Ultra High Performance Concrete (UHPC) Mix Design"
-    )
 
-    st.subheader("Design • Optimize • Validate")
+    st.info("""
+    ### 🚀 AI-Assisted Decision Support Platform
 
-    st.write("")
+    Core capabilities include:
 
-    st.markdown(
-            """
-    Welcome to the **AI-Assisted UHPC Mix Design System**.
+    • 🧠 XGBoost Machine Learning
 
-    This application combines:
+    • ⚙️ Particle Swarm Optimization (PSO)
 
-    - 🧠 Machine Learning (XGBoost)
-    - ⚙️ Particle Swarm Optimization (PSO)
-    - 🏗️ Engineering Validation
-    - 💰 Cost Estimation
-    - 🌱 CO₂ Assessment
+    • 🏗️ Engineering Validation
+
+    • 💰 Cost Estimation
+
+    • 🌱 Sustainability Assessment
 
     to generate optimized Ultra High Performance Concrete (UHPC) mix designs.
-    """
-    )
+    """)
+
  
     st.divider()
 
@@ -138,32 +134,6 @@ if page == "🏠 Home":
             "CSV",
             "Export Ready"
         )
-
-    st.divider()
-
-    c1, c2, c3 = st.columns(3)
-
-    with c1:
-
-        st.metric(
-            "AI Model",
-            "XGBoost"
-        )
-
-    with c2:
-
-        st.metric(
-            "Optimization",
-            "PSO"
-        )
-
-    with c3:
-
-        st.metric(
-            "Validation",
-            "Engineering Rules"
-        )
-
     st.divider()
 
     st.subheader("✨ Core Features")
@@ -171,13 +141,13 @@ if page == "🏠 Home":
     c1, c2 = st.columns(2)
 
     with c1:
-            st.success("🤖 XGBoost Prediction")
-            st.success("⚙️ PSO Optimization")
-            st.success("🏗 Engineering Validation")
-            st.success("🌱 Sustainability Analysis")
+            st.success("🤖 XGBoost Strength Prediction")
+            st.success("⚙️ Particle Swarm Optimization")
+            st.success("🏗 Engineering Feasibilty Checks")
+            st.success("🌱 Sustainability Assessment")
 
     with c2:
-            st.success("📊 Interactive Dashboard")
+            st.success("📊 Interactive Engineering Dashboard")
             st.success("📥 CSV Export")
             st.success("🏆 AI Recommendation Engine")
         
@@ -186,28 +156,58 @@ if page == "🏠 Home":
     st.subheader("🧠 AI Engineering Workflow")
 
     st.markdown("""
-        ### 1️⃣ Input Design Requirements
-        - Target compressive strength
-        - Design objective
+    **1️⃣ Define Design Requirements**
 
-        ### 2️⃣ Machine Learning Prediction
-        - XGBoost predicts achievable strength
+    - Target compressive strength
+    - Design objective
 
-        ### 3️⃣ AI Optimization
-        - Particle Swarm Optimization generates candidate UHPC mixes
+    ---
 
-        ### 4️⃣ Engineering Validation
-        - Practical feasibility checks
-        - Binder ratio verification
+    **2️⃣ Machine Learning Prediction**
 
-        ### 5️⃣ Recommendation Engine
-        - Cost
-        - CO₂
-        - Engineering score
+    - XGBoost estimates achievable compressive strength
 
-        ### 6️⃣ Export Results
-        - CSV
-        """)
+    ---
+
+    **3️⃣ Optimization**
+
+    - Particle Swarm Optimization generates candidate UHPC mixes
+
+    ---
+
+    **4️⃣ Engineering Validation**
+
+    - Binder ratio verification
+    - Practical feasibility assessment
+
+    ---
+
+    **5️⃣ AI Recommendation**
+
+    - Engineering score
+    - Cost estimation
+    - CO₂ assessment
+
+    ---
+
+    **6️⃣ Export Results**
+
+    - Download optimized mix designs in CSV format
+    """)
+
+    st.divider()
+
+    st.info(
+    """
+    ### 💡 Project Purpose
+
+    This application demonstrates the integration of Artificial Intelligence
+    with Civil Engineering to support faster, more reliable and sustainable
+    UHPC mix design.
+
+    Developed as part of an academic internship project.
+    """
+    )
 # =====================================================
 # STRENGTH PREDICTOR
 # =====================================================
@@ -781,14 +781,14 @@ if page == "📊 Engineering Results":
 # ============================================
 
 elif page == "ℹ️ About":
-    st.title("ℹ️ About")
+    st.title("ℹ️ About the system")
 
     st.markdown("""
     # 🏗️ AI-Assisted UHPC Mix Design System
 
-    The **AI-Assisted UHPC Mix Design System** is an intelligent decision-support application developed to assist engineers and researchers in designing **Ultra-High Performance Concrete (UHPC)** mixtures using Artificial Intelligence and optimization techniques.
+    The **AI-Assisted UHPC Mix Design System** is an intelligent decision-support platform developed to support engineers and researchers in designing **Ultra-High Performance Concrete (UHPC)** mixtures using machine learning and optimization techniques.
 
-    This software combines machine learning, engineering validation, optimization algorithms, and sustainability assessment to recommend practical UHPC mix designs that satisfy specified compressive strength requirements while considering engineering feasibility, cost, and environmental impact.
+    The system integrates **XGBoost**, **Particle Swarm Optimization (PSO)**, engineering validation, cost estimation, and sustainability assessment to recommend optimized UHPC mix designs that satisfy target compressive strength while maintaining practical feasibility.
 
     ---
     """)
@@ -798,8 +798,8 @@ elif page == "ℹ️ About":
     st.markdown("""
     - Predict UHPC compressive strength using Machine Learning
     - Generate optimized UHPC mix proportions
-    - Minimize material cost
-    - Reduce carbon footprint
+    - Optimize material cost
+    - - Assess environmental impact (CO₂ emissions)
     - Perform engineering validation of generated mixes
     - Recommend practical and sustainable UHPC mixtures
     """)
@@ -824,7 +824,7 @@ elif page == "ℹ️ About":
 
         st.success("📊 Streamlit Dashboard")
 
-        st.success("🐍 Python")
+        st.success("🐍 Python Programming")
 
     st.divider()
 
@@ -841,7 +841,7 @@ elif page == "ℹ️ About":
 
     5. Cost and CO₂ emissions are estimated.
 
-    6. Recommendation Engine ranks the best performing UHPC mixes.
+    6. Recommendation Engine ranks candidate mixes based on engineering performance, cost, and sustainability.
 
     7. Final AI-generated mix designs can be exported as CSV file.
         
@@ -854,7 +854,7 @@ elif page == "ℹ️ About":
     st.markdown("""
         - UHPC Strength Prediction
 
-        - AI-Based Mix Design Generation
+        - AI-Assisted Mix Design Generation
 
         - Particle Swarm Optimization
 
@@ -862,7 +862,7 @@ elif page == "ℹ️ About":
 
         - Cost Estimation
 
-        - Carbon Footprint Estimation
+        - CO₂ Emission Assessment
 
         - Recommendation Engine
 
@@ -881,7 +881,7 @@ elif page == "ℹ️ About":
     - Explainable Artificial Intelligence (XAI)
     - Life Cycle Assessment (LCA)
     - Integration with laboratory databases
-    - Cloud-based deployment
+    - Web-based collaborative deployment
     - Real-time material price updates
     - Additional supplementary cementitious materials (SCMs)
     """)
@@ -890,22 +890,25 @@ elif page == "ℹ️ About":
 
     st.subheader("👨‍🎓 Project Information")
 
-st.info("""
-    **Project Title**
+    st.info("""
+        **Project Title**
 
-    AI-Assisted UHPC Mix Design System
+        AI-Assisted UHPC Mix Design System
 
-    **Developed For**
+        **Developed For**
 
-    Internship
+        Internship
 
-    Department of Civil Engineering
+        Department of Civil Engineering
 
-    **Framework**
+        **Core Technologies**
 
-    Python • Streamlit • XGBoost • PSO
-""")
+        Python
+        Streamlit
+        XGBoost
+        Particle Swarm Optimization (PSO)
+    """)
 
 st.divider()
 
-st.caption("© 2026 AI-Assisted UHPC Mix Design System")
+st.caption("© 2026 AI-Assisted UHPC Mix Design System | Developed by Manvitha Dobbala")
