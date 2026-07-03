@@ -85,11 +85,6 @@ to generate practical, economical, and sustainable UHPC mix designs.
 
 ## 📸 Application Preview
 
-### 🏠 Home
-
-![Home](screenshots/home.png.jpeg)
-
-
 ## 🧠 AI Workflow
 
 ```text
