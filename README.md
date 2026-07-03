@@ -89,31 +89,6 @@ to generate practical, economical, and sustainable UHPC mix designs.
 
 ![Home](screenshots/home.png.jpeg)
 
----
-
-### 🚀 AI Mix Designer
-
-![Mix Designer](screenshots/AI_Mix_Designer.png.jpeg)
-
----
-
-### 📊 Engineering Results
-
-![Results](screenshots/Engineering_Results.png.jpeg)
-
----
-
-### 📈 Strength Prediction
-
-![Strength](screenshots/strength_predictor.png.jpeg)
-
----
-
-### ℹ️ About
-
-![About](screenshots/About.png.jpeg)
-
----
 
 ## 🧠 AI Workflow
 
@@ -264,7 +239,7 @@ The system provides:
 
 # 👩‍💻 Author
 
-**Manvi**
+**Manvitha** **Dobbala**
 
 B.Tech Civil Engineering
 
