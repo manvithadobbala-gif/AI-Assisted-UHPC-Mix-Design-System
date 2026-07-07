@@ -15,7 +15,7 @@ from utils.recommendation_engine import generate_recommendations
 
 st.set_page_config(
 
-    page_title="UHPC AI Engineering Suite",
+    page_title="AI-Assisted UHPC Mix Design System",
 
     page_icon="🏗️",
 
@@ -373,7 +373,7 @@ Generate optimized UHPC mix designs using:
         with st.spinner("Generating optimized UHPC mixes..."):
 
             results = pso_optimize(
-
+                
                 target_strength=target_strength,
 
                 design_objective=design_objective,
@@ -383,7 +383,8 @@ Generate optimized UHPC mix designs using:
                 iterations=50
 
             )
-
+            
+            st.write(results.head())
         recommendations = generate_recommendations(results)
 
         best = recommendations.iloc[0]
