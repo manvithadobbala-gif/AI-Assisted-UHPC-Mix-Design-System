@@ -407,6 +407,45 @@ Generate optimized UHPC mix designs using:
         st.success("✔ Engineering Validation")
 
         st.success("✔ Recommendation Engine")
+        
+        st.divider()
+
+        st.subheader("🎯 Optimization Strategy")
+
+        if design_objective == "⭐ Balanced Design (Recommended)":
+            st.info("""
+        **Balanced Design**
+
+        The optimization simultaneously considered compressive strength, engineering feasibility, material cost, and CO₂ emissions to identify a well-balanced UHPC mix design.
+        """)
+
+        elif design_objective == "💰 Minimize Cost":
+            st.info("""
+        **Cost-Optimized Design**
+
+        The optimization prioritized minimizing the estimated material cost while satisfying the target compressive strength and maintaining engineering feasibility.
+        """)
+
+        elif design_objective == "🌱 Minimize Carbon Footprint":
+            st.info("""
+        **Sustainable Design**
+
+        The optimization prioritized reducing the estimated embodied CO₂ emissions while maintaining the required compressive strength and practical mix proportions.
+        """)
+
+        elif design_objective == "💪 Maximize Strength":
+            st.info("""
+        **High-Strength Design**
+
+        The optimization prioritized maximizing the predicted compressive strength while ensuring that the generated mix remained practically feasible.
+        """)
+
+        elif design_objective == "🏗️ Maximize Practicality":
+            st.info("""
+        **Practical Engineering Design**
+
+        The optimization prioritized engineering feasibility by emphasizing practical UHPC mix proportions, realistic water–binder ratios, and appropriate binder and fibre contents.
+        """)
         st.divider()
 
         st.subheader("📊 Recommendation Summary")
@@ -566,6 +605,82 @@ Generate optimized UHPC mix designs using:
                 f"{score}/100"
             )
 
+            st.subheader("📌 Engineering Assessment")
+
+            if score >= 90:
+                st.success("✅ Excellent engineering feasibility. The generated mix satisfies the recommended UHPC design guidelines.")
+
+            elif score >= 75:
+                st.warning("⚠ Good engineering feasibility. Minor adjustments may further improve practical performance.")
+
+            else:
+                st.error("❌ Engineering feasibility is limited. Review the material proportions before practical implementation.")
+
+            binder = (
+                mix["Cement"] +
+                mix["Silica Fume"] +
+                mix["GGBS"]
+            )
+
+            wb = mix["Water"] / binder
+
+            checks = []
+
+            # Cement
+            if mix["Cement"] >= 600:
+                checks.append("✅ Cement content is within the recommended UHPC range.")
+            else:
+                checks.append("❌ Cement content is below the recommended minimum.")
+
+            # Water–binder ratio
+            if wb <= 0.20:
+                checks.append(f"✅ Water–binder ratio ({wb:.3f}) is acceptable.")
+            else:
+                checks.append(f"⚠ Water–binder ratio ({wb:.3f}) is relatively high.")
+
+            # Binder
+            if 800 <= binder <= 1100:
+                checks.append(f"✅ Total binder content ({binder:.1f} kg/m³) is within the recommended range.")
+            else:
+                checks.append(f"⚠ Total binder content ({binder:.1f} kg/m³) is outside the recommended range.")
+
+            # Steel fibre
+            if 120 <= mix["Steel Fiber"] <= 220:
+                checks.append("✅ Steel fibre dosage is within the recommended range.")
+            else:
+                checks.append("⚠ Steel fibre dosage should be reviewed.")
+
+            for item in checks:
+                st.write(item)
+
+            st.subheader("📋 Engineering Recommendations")
+
+            st.info("""
+            ### Recommended Materials and Construction Practice
+
+            **Fine Aggregate**
+            • Material: Quartz sand or high-quality silica sand
+            • Maximum particle size: ≤ 2 mm
+
+            **Steel Fibres**
+            • Use high-strength steel fibres.
+            • Ensure uniform dispersion during mixing to prevent fibre balling.
+
+            **Superplasticizer**
+            • Use a Polycarboxylate Ether (PCE)-based high-range water reducer.
+
+            **Mixing Procedure**
+            • Dry-mix all powder constituents before adding water and superplasticizer.
+            • Add steel fibres gradually at the final stage of mixing.
+
+            **Curing**
+            • Follow the curing procedure adopted in the selected experimental programme or the project specification to achieve the desired mechanical performance.
+
+            **Quality Control**
+            • Verify workability before casting.
+            • Maintain the specified water-to-binder ratio.
+            • Ensure proper compaction and curing.
+            """)
             st.divider()
 
             st.subheader("📊 Material Contribution Analysis")
@@ -884,6 +999,18 @@ elif page == "ℹ️ About":
     - Web-based collaborative deployment
     - Real-time material price updates
     - Additional supplementary cementitious materials (SCMs)
+    """)
+
+    st.divider()
+
+    st.subheader("⚠️ Engineering Assumptions and Limitations")
+
+    st.warning("""
+    - Material costs are estimated using representative Indian market prices.
+    - CO₂ emissions are estimated using literature-based embodied carbon emission factors.
+    - Optimization is constrained within practical UHPC material limits.
+    - Predictions are valid only within the range of the training dataset.
+    - AI-generated mix designs should be experimentally validated before practical implementation.
     """)
 
     st.divider()

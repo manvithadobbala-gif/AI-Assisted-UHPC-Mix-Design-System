@@ -4,28 +4,35 @@ import pandas as pd
 
 from utils.predictor import predict_strength
 
-
 # ==========================================================
-# UHPC ENGINEERING LIMITS
+# MATERIAL LIMITS (Engineering-Based)
 # ==========================================================
 
 LIMITS = {
 
-    "cement": (500, 1000),
+    # Typical UHPC cement content
+    "cement": (600, 900),
 
-    "silica": (0, 300),
+    # Silica fume improves packing and strength
+    "silica": (50, 250),
 
-    "ggbs": (0, 400),
+    # GGBFS as supplementary cementitious material
+    "ggbs": (0, 300),
 
-    "water": (140, 220),
+    # Practical UHPC water content
+    "water": (120, 180),
 
-    "sand": (700, 1200),
+    # Fine aggregate
+    "sand": (700, 1100),
 
+    # High-range water reducer
     "sp": (10, 40),
 
-    "fiber": (120, 180)
+    # Steel fibre dosage
+    "fiber": (120, 220)
 
 }
+
 # ==========================================================
 # FITNESS WEIGHTS
 # ==========================================================
@@ -43,8 +50,8 @@ FITNESS_WEIGHTS = {
 }
 # ==========================================================
 # MATERIAL DATABASE
-# Cost: ₹/kg
-# CO₂: kg CO₂/kg
+# Representative Indian Market Prices and Literature-Based
+# CO₂ Emission Factors
 # ==========================================================
 
 MATERIAL_DB = {
@@ -55,12 +62,12 @@ MATERIAL_DB = {
     },
 
     "silica": {
-        "cost": 35.0,
-        "co2": 0.08
+        "cost": 28.0,
+        "co2": 0.03
     },
 
     "ggbs": {
-        "cost": 6.0,
+        "cost": 5.0,
         "co2": 0.07
     },
 
@@ -70,18 +77,18 @@ MATERIAL_DB = {
     },
 
     "sand": {
-        "cost": 1.5,
+        "cost": 1.2,
         "co2": 0.005
     },
 
     "sp": {
-        "cost": 120.0,
-        "co2": 1.50
+        "cost": 180.0,
+        "co2": 2.50
     },
 
     "fiber": {
-        "cost": 95.0,
-        "co2": 2.20
+        "cost": 130.0,
+        "co2": 1.90
     }
 
 }

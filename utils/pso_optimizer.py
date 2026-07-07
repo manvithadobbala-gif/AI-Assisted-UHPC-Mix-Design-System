@@ -149,25 +149,60 @@ def fitness(position, target_strength, design_objective):
 
     wb = candidate["Water_Binder_Ratio"]
 
+    # ---------------------------------------
+    # Water–Binder Ratio
+    # ---------------------------------------
+
     if wb > 0.20:
-
         engineering_score -= 20
-
     elif wb > 0.18:
-
         engineering_score -= 10
+
+    # ---------------------------------------
+    # Total Binder Content
+    # ---------------------------------------
 
     if binder < 800:
-
         engineering_score -= 15
-
     elif binder > 1100:
-
         engineering_score -= 10
 
-    if position["fiber"] < 130:
+    # ---------------------------------------
+    # Cement Content
+    # ---------------------------------------
 
+    if position["cement"] < 600:
+        engineering_score -= 20
+
+    # ---------------------------------------
+    # Silica Fume Content
+    # ---------------------------------------
+
+    if position["silica"] < 50:
         engineering_score -= 10
+
+    elif position["silica"] > 250:
+        engineering_score -= 5
+
+    # ---------------------------------------
+    # Steel Fibre
+    # ---------------------------------------
+
+    if position["fiber"] < 120:
+        engineering_score -= 10
+
+    elif position["fiber"] > 220:
+        engineering_score -= 5
+
+    # ---------------------------------------
+    # Fine Aggregate
+    # ---------------------------------------
+
+    if position["sand"] < 700:
+        engineering_score -= 5
+
+    elif position["sand"] > 1100:
+        engineering_score -= 5
 
     # ---------------------------------------
     # Cost
@@ -229,18 +264,62 @@ def fitness(position, target_strength, design_objective):
 
     )
 
-    fitness_score = (
+    # ---------------------------------------
+    # DESIGN OBJECTIVE
+    # ---------------------------------------
 
-        0.40*strength_score +
+    if design_objective == "⭐ Balanced Design (Recommended)":
 
-        0.30*engineering_score +
+        fitness_score = (
+            0.35 * strength_score +
+            0.30 * engineering_score +
+            0.20 * cost_score +
+            0.15 * co2_score
+        )
 
-        0.20*cost_score +
+    elif design_objective == "💰 Minimize Cost":
 
-        0.10*co2_score
+        fitness_score = (
+            0.25 * strength_score +
+            0.25 * engineering_score +
+            0.40 * cost_score +
+            0.10 * co2_score
+        )
 
-    )
+    elif design_objective == "🌱 Minimize Carbon Footprint":
 
+        fitness_score = (
+            0.25 * strength_score +
+            0.25 * engineering_score +
+            0.10 * cost_score +
+            0.40 * co2_score
+        )
+
+    elif design_objective == "💪 Maximize Strength":
+
+        fitness_score = (
+            0.60 * strength_score +
+            0.20 * engineering_score +
+            0.10 * cost_score +
+            0.10 * co2_score
+        )
+
+    elif design_objective == "🏗️ Maximize Practicality":
+
+        fitness_score = (
+            0.25 * strength_score +
+            0.55 * engineering_score +
+            0.10 * cost_score +
+            0.10 * co2_score
+        )
+
+    else:
+        fitness_score = (
+            0.35 * strength_score +
+            0.30 * engineering_score +
+            0.20 * cost_score +
+            0.15 * co2_score
+        )
     return fitness_score, strength
 # ==========================================================
 # PARTICLE SWARM OPTIMIZATION
