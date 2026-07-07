@@ -10,19 +10,19 @@ from utils.predictor import predict_strength
 
 LIMITS = {
 
-    "cement": (500,1000),
+    "cement": (600,900),
 
-    "silica": (0,300),
+    "silica": (50,250),
 
-    "ggbs": (0,400),
+    "ggbs": (0,300),
 
-    "water": (140,220),
+    "water": (120,180),
 
-    "sand": (700,1200),
+    "sand": (700,1100),
 
     "sp": (10,40),
 
-    "fiber": (120,180)
+    "fiber": (120,220)
 
 }
 
